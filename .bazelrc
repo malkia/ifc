@@ -1,0 +1,11 @@
+build --experimental_convenience_symlinks=clean
+common --enable_platform_specific_config
+common:windows --cxxopt=-std:c++20
+
+## This is what my ../top.bazelrc contains (not in the repo as local to my machine)
+# build --disk_cache=f:/b/d
+# common --repository_cache=f:/b/r
+# startup --output_user_root=f:/b/u
+try-import %workspace%/../top.bazelrc
+
+
