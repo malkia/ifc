@@ -1,6 +1,13 @@
 build --experimental_convenience_symlinks=clean
+
 common --enable_platform_specific_config
+
+# all platforms, based on https://github.com/bazelbuild/bazel/blob/master/src/main/java/com/google/devtools/build/lib/runtime/ConfigExpander.java#L41
 common:windows --cxxopt=-std:c++20
+common:linux --cxxopt=-std=c++20
+common:macos --cxxopt=-std=c++20
+common:freebsd --cxxopt=-std=c++20
+common:openbsd --cxxopt=-std=c++20
 
 ## This is what my ../top.bazelrc contains (not in the repo as local to my machine)
 # build --disk_cache=f:/b/d
